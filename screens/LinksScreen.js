@@ -1,16 +1,15 @@
 import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
+import { Layout } from '@ui-kitten/components';
 
 export default function LinksScreen() {
   return (
-    <ScrollView style={styles.container}>
-      {/**
-       * Go ahead and delete ExpoLinksView and replace it with your content;
-       * we just wanted to provide you with some helpful links.
-       */}
-      <ExpoLinksView />
-    </ScrollView>
+    <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-start', marginTop: 20 }}>
+      <ScrollView style={styles.container}>
+        <ExpoLinksView />
+      </ScrollView>
+    </Layout>
   );
 }
 

@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
 import React from 'react';
 import { Image, Platform, ScrollView, StyleSheet, View } from 'react-native';
-import { Button } from '@ui-kitten/components';
+import { Button, Layout } from '@ui-kitten/components';
 
 export const ButtonSimpleUsageShowcase = () => {
   const [pressCounter, setPressCounter] = React.useState(0);
@@ -15,22 +15,24 @@ export const ButtonSimpleUsageShowcase = () => {
 
 export default function HomeScreen() {
   return (
-    <View style={styles.container}>
-      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-        <View style={styles.welcomeContainer}>
-          <Image
-            source={
-              // eslint-disable-next-line no-undef
-              __DEV__
-                ? require('../assets/images/robot-dev.png')
-                : require('../assets/images/robot-prod.png')
-            }
-            style={styles.welcomeImage}
-          />
-          <ButtonSimpleUsageShowcase />
-        </View>
-      </ScrollView>
-    </View>
+    <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: 20 }}>
+      <View style={styles.container}>
+        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+          <View style={styles.welcomeContainer}>
+            <Image
+              source={
+                // eslint-disable-next-line no-undef
+                __DEV__
+                  ? require('../assets/images/robot-dev.png')
+                  : require('../assets/images/robot-prod.png')
+              }
+              style={styles.welcomeImage}
+            />
+            <ButtonSimpleUsageShowcase />
+          </View>
+        </ScrollView>
+      </View>
+    </Layout>
   );
 }
 
